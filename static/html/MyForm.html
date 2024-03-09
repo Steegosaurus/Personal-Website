@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>My Form</title>
+        <script src="../js/script.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=&libraries=places"></script>
+        <link href="../css/style.css" rel="stylesheet">
+    </head>
+    <body onload="FormSetUp()">
+        <div id="link-container">
+            <div><a href = MySchedule.html>My Schedule</a></div>
+            <div><a href = AboutMe.html>About Me</a></div>
+            <div><a href = MyForm.html>My Form</a></div>
+            <div><a href = stockQuotes.html>Stocks</a></div>
+            <div></div>
+            <div id="clock-container">
+                <div id="TimeNameContainer">Time:</div>
+                <div id="HourContainer"></div>
+                <div>:</div>
+                <div id="MinuteContainer"></div>
+                <div>:</div>
+                <div id="SecondContainer"></div>
+                <div id="am-pm-container"></div>
+            </div>
+        </div>
+        <div id="myform">
+            <form action="EventLog.html" method="post">
+                <div id="form-container">
+                    <label for="event-name">Event name: </label>
+                    <input type="text" name="event-name" id="event-name" pattern="[a-zA-Z0-9 ]+" required>
+                    <label for="event-day">Day of event: </label>
+                    <select name="event-day" id="event-day">
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                        <option value="Saturday">Saturday</option>
+                        <option value="Sunday">Sunday</option>
+                    </select>
+                    <label for="event-start">Start time: </label>
+                    <input type="text" name="event-start" id="event-start" placeholder="--:-- --" required>
+                    <label for="event-end">End time: </label>
+                    <input type="text" name="event-end" id="event-end" placeholder="--:-- --" required>
+                    <label for="phone-num">Phone number: </label>
+                    <input type="tel" name="phone-num" id="phone-num" placeholder="(###) ###-####" required>
+                    <label for="event-location">Location: </label>
+                    <input type="text" name="event-location" id="event-location" required>
+                    <label for="extra-info">Extra info: </label>
+                    <input type="text" name="extra-info" id="extra-info" required>
+                    <label for="url">URL: </label>
+                    <input type="url" name="url" id="url" placeholder="example@domain.com" required>
+                    <input type="submit" value="Submit" onclick="ButtonEvent()">
+                </div>
+            </form>
+            <div id="map-container">
+                <iframe id="form-map" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </body>

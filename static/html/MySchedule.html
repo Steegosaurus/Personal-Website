@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>My Schedule</title>
+        <script src="https://maps.googleapis.com/maps/api/js?key=&libraries=places"></script>
+        <script src="../js/script.js"></script>
+    </head>
+    <body onload="ScheduleSetUp()">
+        <link href="../css/style.css" rel="stylesheet">
+        <div id="link-container">
+            <div><a href = MySchedule.html>My Schedule</a></div>
+            <div><a href = AboutMe.html>About Me</a></div>
+            <div><a href = MyForm.html>My Form</a></div>
+            <div><a href = stockQuotes.html>Stocks</a></div>
+            <div></div>
+            <div id="clock-container">
+                <div id="TimeNameContainer">Time:</div>
+                <div id="HourContainer"></div>
+                <div>:</div>
+                <div id="MinuteContainer"></div>
+                <div>:</div>
+                <div id="SecondContainer"></div>
+                <div id="am-pm-container"></div>
+            </div>
+        </div>
+        <div>
+            <h1>
+                My Schedule
+            </h1>
+            <div id="schedule-container">
+                <table>
+                    <tr>
+                        <th>Day</th>
+                        <th>Event</th>
+                        <th>Time</th>
+                        <th>Event Location (Virtual or Physical)</th>
+                        <th>Phone Number</th>
+                        <th>URL</th>
+                    </tr>
+                    <tr onmouseover="MouseHoverHandler(1, '../img/keller.jpg')" onmouseout="MouseStopHoverHandler(1)">
+                        <td>Monday</td>
+                        <td>CSCI 4271W Lab</td>
+                        <td>10:10 AM - 11:00 AM</td>
+                        <td>Kenneth H. Keller Hall, 200 Union St SE, Minneapolis, MN 55455 Room 1-262</td>
+                        <td>N/A</td>
+                        <td><a href = https://canvas.umn.edu/courses/413139>CSCI 4271W Page</a></td>
+                    </tr>
+                    <tr onmouseover="MouseHoverHandler(2, '../img/anderson.jpg')" onmouseout="MouseStopHoverHandler(2)">
+                        <td>Monday</td>
+                        <td>CSCI 4131 Lecture</td>
+                        <td>11:15 AM - 12:30 PM</td>
+                        <td>Anderson Hall, 257 S 19th Ave, Minneapolis, MN 55455 Room 370</td>
+                        <td>N/A</td>
+                        <td><a href = https://canvas.umn.edu/courses/412716>CSCI 4131 Page</a></td>
+                    </tr>
+                    <tr onmouseover="MouseHoverHandler(3, '../img/ackerman.jpg')" onmouseout="MouseStopHoverHandler(3)">
+                        <td>Tuesday</td>
+                        <td>CSCI 4203 Lecture</td>
+                        <td>9:45 AM - 11:00 AM</td>
+                        <td>Akerman Hall, 110 Union St SE, Minneapolis, MN 55455 319</td>
+                        <td>N/A</td>
+                        <td><a href = https://canvas.umn.edu/courses/413311>CSCI 4203 Page</a></td>
+                    </tr>
+                    <tr onmouseover="MouseHoverHandler(4, '../img/smith.jpg')" onmouseout="MouseStopHoverHandler(4)">
+                        <td>Tuesday</td>
+                        <td>CSCI 4271W Lecture</td>
+                        <td>11:15 AM - 12:30 PM</td>
+                        <td>Smith Hall, 207 Pleasant St SE, Minneapolis, MN 55455 Room 231</td>
+                        <td>N/A</td>
+                        <td><a href = https://canvas.umn.edu/courses/413139>CSCI 4271W Page</a></td>
+                    </tr>
+                    <tr onmouseover="MouseHoverHandler(5, '../img/anderson.jpg')" onmouseout="MouseStopHoverHandler(5)">
+                        <td>Wednesday</td>
+                        <td>CSCI 4131 Lecture</td>
+                        <td>11:15 AM - 12:30 PM</td>
+                        <td>Anderson Hall, 257 S 19th Ave, Minneapolis, MN 55455 Room 370</td>
+                        <td>N/A</td>
+                        <td><a href = https://canvas.umn.edu/courses/412716>CSCI 4131 Page</a></td>
+                    </tr>
+                    <tr onmouseover="MouseHoverHandler(6, '../img/ackerman.jpg')" onmouseout="MouseStopHoverHandler(6)">
+                        <td>Thursday</td>
+                        <td>CSCI 4203 Lecture</td>
+                        <td>9:45 AM - 11:00 AM</td>
+                        <td>Akerman Hall, 110 Union St SE, Minneapolis, MN 55455 319</td>
+                        <td>N/A</td>
+                        <td><a href = https://canvas.umn.edu/courses/413311>CSCI 4203 Page</a></td>
+                    </tr>
+                    <tr onmouseover="MouseHoverHandler(7, '../img/smith.jpg')" onmouseout="MouseStopHoverHandler(7)">
+                        <td>Thursday</td>
+                        <td>CSCI 4271W Lecture</td>
+                        <td>11:15 AM - 12:30 PM</td>
+                        <td>Smith Hall, 207 Pleasant St SE, Minneapolis, MN 55455 Room 231</td>
+                        <td>N/A</td>
+                        <td><a href = https://canvas.umn.edu/courses/413139>CSCI 4271W Page</a></td>
+                    </tr>
+                    <tr onmouseover="MouseHoverHandler(8, '../img/rec.jpg')" onmouseout="MouseStopHoverHandler(8)">
+                        <td>Friday</td>
+                        <td>Workout</td>
+                        <td>11:00 AM - 1:00 PM</td>
+                        <td>UMN RecWell, 123 SE Harvard St, Minneapolis, MN 55455</td>
+                        <td>(612) 626-9222</td>
+                        <td><a href = https://recwell.umn.edu>RecWell</a></td>
+                    </tr>
+                    <tr onmouseover="MouseHoverHandler(9, '../img/bethel.jpg')" onmouseout="MouseStopHoverHandler(9)">
+                        <td>Saturday</td>
+                        <td>Disc Golf Round</td>
+                        <td>3:00 PM - 5:00 PM</td>
+                        <td>Bethel University Disc Golf Course, Disc Golf Hole 1, Arden Hills, MN 55112</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr onmouseover="MouseHoverHandler(10, '../img/dominos.png')" onmouseout="MouseStopHoverHandler(10)">
+                        <td>Sunday</td>
+                        <td>Order Pizza</td>
+                        <td>6:00 PM - 6:10 PM</td>
+                        <td>Domino's Pizza, 215 SE Oak St, Minneapolis, MN 55414</td>
+                        <td>1 (734) 930-3030</td>
+                        <td><a href = https://www.dominos.com/en>Domino's</a></td>
+                    </tr>
+                </table>
+                <img id="big-picture" src = "../img/gophers-mascot.png" alt="Picture of me" width="500" height="300">
+            </div>
+        </div>
+            <div id="mapping_area">
+                <div id="directionsPanel"></div> 
+                <iframe
+                id="schedule-map"
+                width="600"
+                height="450"
+                frameborder="0" style="border:0"
+                allowfullscreen=""
+                ></iframe>
+                <div id="addressInputPanel">
+                    <div>
+                        <label for="addressInput">Enter Address:</label>
+                        <input type="text" id="addressInput" placeholder="Enter address...">
+                    </div>
+                    <h4>Select Travel Mode:</h4>
+                    <div>
+                        <input type="radio" name="travelMode" value="DRIVING" checked> Driving
+                        <input type="radio" name="travelMode" value="WALKING"> Walking
+                        <input type="radio" name="travelMode" value="TRANSIT"> Transit
+                        <button onclick="getDirections()">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+        </div>     
+    </body>
+</html>

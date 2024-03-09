@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>My Form</title>
+        <script src="../js/stocks.js"></script>
+    </head>
+    <body onload="ClockSetUp()">
+        <link href="../css/style.css" rel="stylesheet">
+        <div id="link-container">
+            <div><a href = MySchedule.html>My Schedule</a></div>
+            <div><a href = AboutMe.html>About Me</a></div>
+            <div><a href = MyForm.html>My Form</a></div>
+            <div><a href = stockQuotes.html>Stocks</a></div>
+            <div></div>
+            <div id="clock-container">
+                <div id="TimeNameContainer">Time:</div>
+                <div id="HourContainer"></div>
+                <div>:</div>
+                <div id="MinuteContainer"></div>
+                <div>:</div>
+                <div id="SecondContainer"></div>
+                <div id="am-pm-container"></div>
+            </div>
+        </div>
+        <form>
+            <label for="stockSymbolInput">Enter Text:</label>
+            <input type="text" id="stockSymbolInput" name="stockSymbolInput">    
+            <button type="button" onclick="lookUpStock()">Look Up Stock</button>
+        </form>
+        <textarea id="stocktext">
+
+        </textarea>
+    </body>
+</html>
